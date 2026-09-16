@@ -1,3 +1,5 @@
+logs/Android_v1/Android.log filter=lfs diff=lfs merge=lfs -text
+logs/BGL/BGL.log filter=lfs diff=lfs merge=lfs -text
 *.gitignore filter=lfs diff=lfs merge=lfs -text
 *.lock filter=lfs diff=lfs merge=lfs -text
 *.toml filter=lfs diff=lfs merge=lfs -text
