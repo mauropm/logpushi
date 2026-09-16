@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cd2f845eb3e7446a2e224946f073f56acc3660d8999720f5a22bb3f83b92eb66
-size 691
+[package]
+name = "logpushi"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+authors = ["Mauro Parra"]
+
+[dependencies]
+anyhow = "1"
+async-trait = "0.1"
+bytes = "1"
+chrono = "0.4"
+clap = { version = "4", features = ["derive", "env"] }
+prost = "0.13"
+regex = "1"
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1", features = ["preserve_order"] }
+thiserror = "1"
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "signal", "sync", "time"] }
+
+[dev-dependencies]
+tempfile = "3"
+
+[[bin]]
+name = "logpushi"
+path = "src/main.rs"
+
+[profile.release]
+lto = "thin"
